@@ -7,33 +7,17 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import static org.junit.Assert.*;
+import org.junit.Before;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+/**
+ * Unit test for simple App.
+ */
+public class AppTest {
+    private App app;
+    @Before
+    public void setup() { app = new App();
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-
-    }
-}
+    @org.junit.Test
+    public void testSayHello() { assertEquals("Hello", app.sayHello());
+    } }
