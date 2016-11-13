@@ -3,10 +3,12 @@ language: java
 install: true
 sudo: false
 jdk:
-  - oraclejdk8
-  env: WITH_COVERALLS=true
-  - oraclejdk7
-  - openjdk6
+  fast_finish: true
+  - jdk: oraclejdk8
+    env: WITH_COVERALLS=true
+  - jdk: oraclejdk7
+  - jdk: openjdk6
+
 cache:
   directories:
   - $HOME/.m2
