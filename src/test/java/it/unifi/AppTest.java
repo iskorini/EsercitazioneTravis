@@ -20,4 +20,10 @@ public class AppTest {
     }
     @org.junit.Test
     public void testSayHello() { assertEquals("Hello", app.sayHello());
-    } }
+    }
+    @org.junit.Test
+    public void testSayHelloWithName() {
+        assertEquals("Hello World", app.sayHello("World"));
+    }
+
+}
