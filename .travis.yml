@@ -4,10 +4,17 @@ install: true
 sudo: false
 jdk:
   - oraclejdk8
+  env: WITH_COVERALLS=true
   - oraclejdk7
   - openjdk6
 cache:
   directories:
   - $HOME/.m2
+
 script:
-- mvn -f pom.xml clean verify -Pjacoco coveralls:report
+ - if [ "$WITH_COVERALLS" == "true" ];
+   then
+     mvn -f /pom.xml clean verify -Pjacoco coveralls:report;
+   else
+     mvn -f /pom.xml clean verify;
+   fi
