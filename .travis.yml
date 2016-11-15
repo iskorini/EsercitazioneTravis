@@ -1,22 +1,26 @@
 language: java
+osx_image: xcode8
 
 install: true
 
 sudo: false
 
-matrix:
-  fast_finish: true
-  include:
-    - jdk: oraclejdk8
-      env: WITH_COVERALLS=true
-    - jdk: oraclejdk7
-    - jdk: openjdk6
-    - os: osx
-
-
 cache:
   directories:
   - $HOME/.m2
+
+matrix:
+  fast_finish: true
+  include:
+
+    - jdk: oraclejdk8
+      env: WITH_COVERALLS=true
+
+    - jdk: oraclejdk7
+
+    - jdk: openjdk6
+
+    - os: osx
 
 
 script:
