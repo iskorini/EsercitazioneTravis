@@ -19,6 +19,6 @@ cache:
 
 script:
  - if [ "$WITH_COVERALLS" == "true" ];
-   then mvn -f /pom.xml clean verify -Pjacoco coveralls:report;
-   else mvn -f /pom.xml clean verify;
+   then mvn -f pom.xml clean verify -Pjacoco coveralls:report;
+   else mvn -f pom.xml clean verify;
    fi
